@@ -47,15 +47,32 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        gap : 10px;
+        &_input {
+            width: 80%;
+            font-size: 16pt;
+            border-radius: 25px;
+            padding: 4px 10px;
+        }
         &_button {
-            background-color: white;
+            width: 40px;
+            height: 40px;
             border: none;
-            color: black;
-             font-size: 16pt;
+            background-color: white;
         }
-        &_button:hover {
-            background-color: aqua;
-            font-weight: bold;
+        &_button:hover path{
+            fill: aqua;
         }
+    }
+    .main {
+        width: 100%;
+        position: relative;
+    }
+    .home_container {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }

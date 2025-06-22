@@ -51,14 +51,31 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
+}
+.row__panel_input {
+  width: 80%;
+  font-size: 16pt;
+  border-radius: 25px;
+  padding: 4px 10px;
 }
 .row__panel_button {
-  background-color: white;
+  width: 40px;
+  height: 40px;
   border: none;
-  color: black;
-  font-size: 16pt;
+  background-color: white;
 }
-.row__panel_button:hover {
-  background-color: aqua;
-  font-weight: bold;
+.row__panel_button:hover path {
+  fill: aqua;
+}
+.row .main {
+  width: 100%;
+  position: relative;
+}
+.row .home_container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }/*# sourceMappingURL=style.css.map */
