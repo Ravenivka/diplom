@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: gray;
+}
+.container {
+    width: 1600px;
+  margin-left: calc(50% - 800px);
+  margin-right: calc(50% - 800px);
+  background-color: white;
+}
+.row {
+    
+}
