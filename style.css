@@ -17,6 +17,7 @@ body {
 
 .row {
   width: 100%;
+  height: 50px;
   display: flex;
   font-family: Arial, Helvetica, sans-serif;
   align-items: center;
@@ -42,7 +43,7 @@ body {
   font-weight: bold;
 }
 .row__span:hover {
-  font-size: 16pt;
+  font-size: 17pt;
   background-color: aqua;
 }
 .row__panel {
@@ -50,4 +51,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.row__panel_button {
+  background-color: white;
+  border: none;
+  color: black;
+  font-size: 16pt;
+}
+.row__panel_button:hover {
+  background-color: aqua;
+  font-weight: bold;
 }/*# sourceMappingURL=style.css.map */
