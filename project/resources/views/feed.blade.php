@@ -1,11 +1,11 @@
 @extends('layouts.layout')
     @php
-        $title = 'Ошибка';
+        $title = 'Отзывы';
     @endphp
 @section('content')
 
-    <div class="home_container">
-        
+    <div class="feed_container">
+        hi
     </div>
        
 @endsection
