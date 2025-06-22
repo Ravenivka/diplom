@@ -8,10 +8,10 @@
     <header class="row">
         @include('layouts.header')
     </header>
-    <main id="main" class="row">
+    <main id="main" class="main">
         @yield('content')
     </main>
-    <footer class="row">
+    <footer class="footer">
         @include('layouts.footer')
     </footer>
     </div>

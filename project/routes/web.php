@@ -7,3 +7,4 @@ Route::get('/', [HomeController::class, 'index'] );
 Route::get('/laravel', function () {
     return view('welcome');
 });
+Route::post('/aut', [HomeController::class, 'aut']);
