@@ -8,3 +8,4 @@ Route::get('/laravel', function () {
     return view('welcome');
 });
 Route::post('/aut', [HomeController::class, 'aut']);
+Route::get('/order', [HomeController::class, 'order']);

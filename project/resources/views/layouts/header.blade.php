@@ -6,7 +6,7 @@
         <span class="row__span">Команда</span>
         <span class="row__span">Кофе</span>
         <span class="row__span">Отзывы</span>
-        <span class="row__span">Заказ</span>
+        <span class="row__span" id="order">Заказ</span>
     </div>
     <div class="row__panel"> 
     @if (is_null($person))
@@ -21,4 +21,11 @@
         <p class="persona">{{ $person }}</p>
     @endif
     </div>
+    <script>
+        const span = document.getElementById('order');
+        span.addEventListener('click', function(){
+            window.location.href = '/order';
+        } );
+         
+    </script>
 </header>

@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Laravel\Pail\ValueObjects\Origin\Console  ;
+use App\Models\User;
+
 
 class HomeController extends Controller
 {   
@@ -11,24 +12,15 @@ class HomeController extends Controller
     public function index(){
         return view('home', ['person' => $this->person]);
     }
+    public function order() {
+        return view('order', ['person' => $this->person]);
+    }
+  
 
     public function aut () {
         $mail = null;
-        
-        if (trim($_POST['mail']) == '') {
-            error_log('zero');
-            $mail = null; 
-        } elseif (isset($_POST['mail']) ) {
-            $mail = $_POST['mail'];
-        
-        } else {            
-            error_log('zero');
-        }
-
-        return $mail;
-        
-        
-            
-       
+        $users = User::where('email', $mail)->get();         
+        $from = filter_input(INPUT_SERVER, 'QUERY_STRING');
+        return $_SERVER['HTTP_REFERER'];       
     }
 }
