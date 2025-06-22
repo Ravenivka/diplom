@@ -1,5 +1,5 @@
 
-<header class="row">
+
 
     <div class="row__start"> <h1 class="row__h1" id="home">КОФЕЙНЯ</h1></div>
     <div class="row__finish">
@@ -27,12 +27,12 @@
         span.addEventListener('click', function(){
             window.location.href = '/order';
         } );
-        const team = document.getElementById('team'); 
-        team.addEventListener('click', function(){
+        const t = document.getElementById('team'); 
+        t.addEventListener('click', function(){
             window.location.href = '/team';
         } );
         const home = document.getElementById('home'); 
-        team.addEventListener('click', function(){
+        home.addEventListener('click', function(){
             window.location.href = '/';
         } );
         const coffe = document.getElementById('coffe'); 
@@ -44,4 +44,3 @@
             window.location.href = '/feed';
         } );
     </script>
-</header>

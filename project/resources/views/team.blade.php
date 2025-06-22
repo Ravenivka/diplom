@@ -4,7 +4,7 @@
     @endphp
 @section('content')
 
-    <div class="team_container">
+    <div class="team">
         hi
     </div>
        
