@@ -9,18 +9,20 @@ use App\Models\User;
 class HomeController extends Controller
 {   
     private $person = null;
+    private $parent = '/';
     public function index(){
-        return view('home', ['person' => $this->person]);
+        return view('home', ['person' => $this->person, 'parent' => $this->parent]);
     }
     public function order() {
-        return view('order', ['person' => $this->person]);
+        $this->parent = '/order';
+        return view('order', ['person' => $this->person, 'parent' => $this->parent]);
     }
   
 
     public function aut () {
         $mail = null;
         $users = User::where('email', $mail)->get();         
-        $from = filter_input(INPUT_SERVER, 'QUERY_STRING');
-        return $_SERVER['HTTP_REFERER'];       
+        $from = $this->parent;
+        return $from;       
     }
 }
