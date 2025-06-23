@@ -1,0 +1,46 @@
+.team {
+  position: relative;
+  width: 100%;
+}
+.team__h1 {
+  text-align: center;
+}
+
+.squad {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.item {
+  width: 400px;
+}
+.item__img {
+  width: 100%;
+}
+.item__cut {
+  width: 400px;
+  height: 480px;
+  overflow: hidden;
+}
+.item__h3 {
+  text-align: center;
+}
+.item__p {
+  margin: 4px 4px;
+}
+
+@media (max-width: 424px) {
+  .item {
+    width: 375px;
+  }
+  .item__img {
+    width: 100%;
+  }
+  .item__cut {
+    width: 375px;
+    height: 450px;
+  }
+}/*# sourceMappingURL=team.css.map */

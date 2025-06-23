@@ -1,0 +1,47 @@
+.team {
+    position: relative;    
+    width: 100%;
+    &__h1{
+        text-align: center;
+    }
+}
+.squad {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.item {
+    width: 400px;
+    &__img {
+        width: 100%;
+    }
+    &__cut {
+        width: 400px;
+        height: 480px;
+        overflow: hidden;
+    }
+    &__h3 {
+        text-align: center;
+    }
+    &__p {
+        margin: 4px 4px;
+        
+    }
+}
+
+
+
+@media(max-width: 424px){
+    .item {
+        width: 375px;
+        &__img {
+            width: 100%;
+        }
+        &__cut {
+            width: 375px;
+            height: 450px;            
+        }
+    }
+}
