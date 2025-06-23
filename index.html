@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="team.css">
+    <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="team.css"><link rel="stylesheet" href="coffe.css">
 </head>
 <body>
     <div class="container">
@@ -25,71 +25,27 @@
 
         </header>
         <main class="main">
-            <div class="team">
-                <h1 class="team__h1">Наша команда</h1>
-                <div class="squad">
-        <!--tut-->
-                    <div class="item">
-                        <div class="item__cut"> <img src="img/b1.webp" alt="item" class="item__img" /></div>
-                        <div class="item__context">
-                            <h3 class="item__h3">Lorem, ipsum.</h3>
-                            <p class="item__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate.</p>
+    <!--tut-->
+            <div class="coffe_container">
+                <h1 class="coffe__h1">Наш ассортимент</h1>
+                <!--step1-->
+                <div class="lenta">
+                    <div class="goods">
+                        <div class="goods__cut"> <img src={{ $src }} alt="item" class="goods__img" /></div>
+                        <div class="goods__context">
+                            <h3 class="goods__h3">{{ $caption }}</h3>
+                            <p class="goods__p">{{ $text }}</p>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="item__cut"><img src="img/b2.jpeg" alt="item" class="item__img" /></div>
-                                                <div class="item__context">
-                            <h3 class="item__h3">Lorem, ipsum.</h3>
-                            <p class="item__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate.</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item__cut"><img src="img/b3.jpg" alt="item" class="item__img" /></div>
-                                                <div class="item__context">
-                            <h3 class="item__h3">Lorem, ipsum.</h3>
-                            <p class="item__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate.</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item__cut"><img src="img/b4.webp" alt="item" class="item__img" /></div>
-                                                <div class="item__context">
-                            <h3 class="item__h3">Lorem, ipsum.</h3>
-                            <p class="item__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate.</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item__cut"><img src="img/b5.webp" alt="item" class="item__img" /></div>
-                                                <div class="item__context">
-                            <h3 class="item__h3">Lorem, ipsum.</h3>
-                            <p class="item__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate.</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item__cut"><img src="img/b6.jpg" alt="item" class="item__img" /></div>
-                                                <div class="item__context">
-                            <h3 class="item__h3">Lorem, ipsum.</h3>
-                            <p class="item__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate.</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item__cut"><img src="img/b7.webp" alt="item" class="item__img" /></div>
-                                                <div class="item__context">
-                            <h3 class="item__h3">Lorem, ipsum.</h3>
-                            <p class="item__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate.</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="item__cut"><img src="img/b8.png" alt="item" class="item__img" /></div>
-                                                <div class="item__context">
-                            <h3 class="item__h3">Lorem, ipsum.</h3>
-                            <p class="item__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate.</p>
-                        </div>
-                    </div>
-        <!--end tut-->
                 </div>
+                <!--step2-->
+                <div class="lenta"></div>
+                <!--step3-->
+                <div class="lenta"></div>
             </div>
-        </main>
 
+        </main>
+    <!--end-->
         <footer class="footer">
             <div class="panorama">
                 <img alt="panorama" class="panorama__img" src="img/panorama.png" />

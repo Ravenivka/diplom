@@ -3,13 +3,13 @@
         $title = 'Команда';
         $squad = [
             ['src' => "img/b1.webp", 'caption' => 'Lorem, ipsum.', 'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate.'],
-            ['src' => "img/b1.webp", 'caption' => 'Lorem, ipsum.', 'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate.'],
-            ['src' => "img/b1.webp", 'caption' => 'Lorem, ipsum.', 'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate.'],
-            ['src' => "img/b1.webp", 'caption' => 'Lorem, ipsum.', 'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate.'],
-            ['src' => "img/b1.webp", 'caption' => 'Lorem, ipsum.', 'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate.'],
-            ['src' => "img/b1.webp", 'caption' => 'Lorem, ipsum.', 'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate.'],
-            ['src' => "img/b1.webp", 'caption' => 'Lorem, ipsum.', 'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate.'],
-            ['src' => "img/b1.webp", 'caption' => 'Lorem, ipsum.', 'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate.']
+            ['src' => "img/b2.jpeg", 'caption' => 'Lorem, ipsum.', 'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate.'],
+            ['src' => "img/b3.jpg", 'caption' => 'Lorem, ipsum.', 'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate.'],
+            ['src' => "img/b4.webp", 'caption' => 'Lorem, ipsum.', 'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate.'],
+            ['src' => "img/b5.webp", 'caption' => 'Lorem, ipsum.', 'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate.'],
+            ['src' => "img/b6.jpg", 'caption' => 'Lorem, ipsum.', 'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate.'],
+            ['src' => "img/b7.webp", 'caption' => 'Lorem, ipsum.', 'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate.'],
+            ['src' => "img/b8.png", 'caption' => 'Lorem, ipsum.', 'text' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, voluptate.']
         ];
     @endphp
 @section('content')
