@@ -16,6 +16,7 @@
 
 .item {
   width: 400px;
+  border: 3px solid #A0A0A0 ;
 }
 .item__img {
   width: 100%;
@@ -31,7 +32,11 @@
 .item__p {
   margin: 4px 4px;
 }
-
+@media (max-width: 1599px) {
+  .item {
+    border: none;
+  }
+}
 @media (max-width: 424px) {
   .item {
     width: 375px;
