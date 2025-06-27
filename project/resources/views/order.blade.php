@@ -1,12 +1,16 @@
 @extends('layouts.layout')
     @php
-        $title = 'Заказ';
+        $title = 'Заказ';        
     @endphp
 @section('content')
 
     <div class="order_container">
         <?php
-            var_dump($data);
+            if(!isset($data)){
+                echo 'Cart is empty';
+            } else {
+                var_dump ( json_decode($data));
+            }
         ?>
     </div>
        

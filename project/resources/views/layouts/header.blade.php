@@ -1,4 +1,36 @@
 
+<style>
+    .row_person {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        color: coral;
+        font-weight: bold;
+    }
+    .row__summary{
+        display: block;
+        margin-left: 10px;
+    }
+    .row__panel {
+        display: flex;
+        align-items: center;
+    }
+    .row__div {
+        position: absolute;
+        top: 50px;
+        right: 220px;
+        background-color: #505050;
+        visibility: hidden;
+    }
+    .row__a {
+        color: gold;
+        border: none;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 16px;
+        width: 150px;
+        text-align: left;
+        padding-left: 5px;
+    }
+</style>
 
 
     <div class="row__start"> <h1 class="row__h1" id="home">КОФЕЙНЯ</h1></div>
@@ -8,19 +40,17 @@
         <span class="row__span" id="feed">Отзывы</span>
         <span class="row__span" id="order">Заказ</span>
     </div>
-    <div class="row__panel"> 
-    @if (is_null($person))
-    <form method="post" action="/aut" class="row__panel_form">
-        @CSRF
-        <input class="row__panel_input" placeholder="e-mail" type="email" name="mail"/> 
-        <input name="from" type="hidden" value={{ $parent }} /> 
-        <button class="row__panel_button" type="submit" >
-           <svg viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="#444" d="M7.3 14.2l-7.1-5.2 1.7-2.4 4.8 3.5 6.6-8.5 2.3 1.8z"></path> </g></svg>
-        </button>
-    </form>
-    @else
-        <p class="persona">{{ $person }}</p>
-    @endif
+    <div class="row__panel">        
+    <span class="row_person">{{ $person }}</span>        
+    
+        <button class="row__summary" > <img width="30" height="30" alt="user" src="img/user.png" /> </button>
+        <div class="row__div" id="row__div">
+            <a class="row__a" href="/aut">Войти</a><hr/>
+            <a class="row__a" href="/reg">Регистрация</a><hr/>
+            <a class="row__a" href="/panel">Панель управления</a>
+        </div>
+        
+
     </div>
     <script>
         const span = document.getElementById('order');
@@ -43,4 +73,13 @@
         feed.addEventListener('click', function(){
             window.location.href = '/feed';
         } );
+        const visa = document.querySelector('.row__summary');
+        const diva = document.getElementById('row__div');
+        visa.addEventListener('click', function(){
+            if (diva.style.visibility == 'visible') {
+                diva.style.visibility = 'hidden';
+            } else {
+                diva.style.visibility = 'visible';
+            }
+        })
     </script>

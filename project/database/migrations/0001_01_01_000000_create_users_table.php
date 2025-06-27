@@ -21,6 +21,8 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->boolean('onDesc')->default(false);
+            $table->string('adress')->default('');
+            $table->string('phone')->default('');
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

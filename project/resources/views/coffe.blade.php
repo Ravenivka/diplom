@@ -10,7 +10,8 @@
         }
         $dataList = [
           ['id' => 1, 'count' => 1], ['id' => 4, 'count' => 3]
-        ]
+        ];
+        $strFrom = json_encode($dataList);
     @endphp
 @section('content')
     <style>
@@ -61,9 +62,9 @@
     <div class="coffe_container">
         <h1 class="coffe__h1">Наш ассортимент</h1>
         @include('components.goodsgroup',['cat'=>'coffe', 'category' => 'Кофе' ])  
-        <form method="post" action = {{ action([HomeController::class, 'getorder']) }}>
+        <form method="post" action = "/order/{{ $strFrom }} ">
           @CSRF
-          <?php $_POST['data'] = $dataList; ?>
+          
           <p style="text-align: center;"> <button class="coffee_button" type="submit">Перейти в корзину</button> </p>
         </form>
         @include('components.goodsgroup',['cat'=>'dessert', 'category' => 'Десерты' ])  
