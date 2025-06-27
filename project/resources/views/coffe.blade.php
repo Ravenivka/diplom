@@ -1,10 +1,16 @@
 @extends('layouts.layout')
     @php
     use App\Models\Good;
+    use App\Http\Controllers\HomeController;
         $title = 'Каталог';
         $newcoffee = Good::where('cat', 'coffe')->where('new', true)->get();
         $oldcoffee = Good::where('cat', 'coffe')->where('new', false)->get();
-        
+        if (!isset($dataList)) {
+          $dataList = Array();
+        }
+        $dataList = [
+          ['id' => 1, 'count' => 1], ['id' => 4, 'count' => 3]
+        ]
     @endphp
 @section('content')
     <style>
@@ -55,6 +61,11 @@
     <div class="coffe_container">
         <h1 class="coffe__h1">Наш ассортимент</h1>
         @include('components.goodsgroup',['cat'=>'coffe', 'category' => 'Кофе' ])  
+        <form method="post" action = {{ action([HomeController::class, 'getorder']) }}>
+          @CSRF
+          <?php $_POST['data'] = $dataList; ?>
+          <p style="text-align: center;"> <button class="coffee_button" type="submit">Перейти в корзину</button> </p>
+        </form>
         @include('components.goodsgroup',['cat'=>'dessert', 'category' => 'Десерты' ])  
         @include('components.goodsgroup',['cat'=>'blin', 'category' => 'Блины' ])  
     </div>

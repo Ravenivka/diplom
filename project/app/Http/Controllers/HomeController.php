@@ -44,4 +44,9 @@ class HomeController extends Controller
         $from = $_POST['from'];
         return $from;       
     }
+
+    public function getorder(Request $request) {
+        $data = $request->input('data');
+        return view('order', ['person' => $this->person, 'parent' => $this->parent, 'data' => $data]);
+    }
 }

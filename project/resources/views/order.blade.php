@@ -5,7 +5,9 @@
 @section('content')
 
     <div class="order_container">
-        hi
+        <?php
+            var_dump($data);
+        ?>
     </div>
        
 @endsection
