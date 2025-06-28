@@ -7,6 +7,55 @@
     <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="team.css"><link rel="stylesheet" href="coffe.css">
 </head>
 <body>
+    <style>
+       .aut_container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 90vh;
+            background-color: #404040;
+       } 
+       .form-style {
+          padding: 13px 20px;
+          padding-left: 55px;
+          height: 50px;
+          width: 500px;
+          font-weight: 500;
+          border-radius: 4px;
+          font-size: 16px;
+          line-height: 22px;
+          letter-spacing: 0.5px;
+          outline: none;
+          color: #c4c3ca;
+          background-color: #1f2029;
+          border: none;
+          -webkit-transition: all 200ms linear;
+          transition: all 200ms linear;
+          box-shadow: 0 4px 8px 0 rgba(21,21,21,.2);
+        }
+        .aut_btn {
+            color: #c4c3ca;
+            font-size: 20px;
+            width: 500px;
+            height: 50px;
+            border: none;
+            background-color: #1f2029;
+            color: #c4c3ca;
+        }
+        .aut_btn:hover {
+            background-color: #c4c3ca;
+            color: #1f2029;
+        }
+        .aut_form {
+            width: 50%;
+            height: 50%;
+            background-color: #1f2029;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
     <div class="container">
         <header class="row">
             <div class="row__start"> <h1 class="row__h1">КОФЕЙНЯ</h1></div>
@@ -26,158 +75,16 @@
         </header>
         <main class="main">
     <!--tut-->
-            <div class="coffe_container">
-                <h1 class="coffe__h1">Наш ассортимент</h1>
-                <!--step1-->
-                <div class="lenta__title">
-                    <h2 class="lenta__h2">Кофе</h2>                    
-                </div>
-                <div class="lenta">
-                    <div class="goods">
-                        <div class="goods__cut"> <img src="img/goods/Amiricano.png" alt="item" class="goods__img" /></div>
-                        <div class="goods__context">
-                            <h3 class="goods__h3">Lorem, ipsum.</h3>
-                            <p class="goods__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis culpa repudiandae quisquam laborum totam enim labore itaque, architecto rem ipsam fugiat hic praesentium quam tempora.</p>
-                            <p class="goods__price">200руб</p>
-                        </div>                        
+            <div class="aut_container">
+                <form class="aut_form" action="/check" method="post">
+                  <div>
+                    <input type="email" name="logemail" class="form-style" placeholder="Your Email" id="logemail" autocomplete="off"><br/>
+                    <input type="password" name="logpass" class="form-style" placeholder="Your Password" id="logpass" autocomplete="off"><br/>
+                    <p style="text-align:center"> <button class="aut_btn">OK</button> </p>
+                    <span style="font-size:10px; color:red;text-align:center; width:100%; display:block;" id="error">тут будут ошибки</span>
                     </div>
-                
-                    <div class="goods">
-                        <div class="goods__cut"> <img src="img/goods/Amiricano.png" alt="item" class="goods__img" /></div>
-                        <div class="goods__context">
-                            <h3 class="goods__h3">Lorem, ipsum.</h3>
-                            <p class="goods__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis culpa repudiandae quisquam laborum totam enim labore itaque, architecto rem ipsam fugiat hic praesentium quam tempora.</p>
-                            <p class="goods__price">200руб</p>
-                        </div>                        
-                    </div>
-                
-                    <div class="goods">
-                        <div class="goods__cut"> <img src="img/goods/Amiricano.png" alt="item" class="goods__img" /></div>
-                        <div class="goods__context">
-                            <h3 class="goods__h3">Lorem, ipsum.</h3>
-                            <p class="goods__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis culpa repudiandae quisquam laborum totam enim labore itaque, architecto rem ipsam fugiat hic praesentium quam tempora.</p>
-                            <p class="goods__price">200руб</p>
-                        </div>                        
-                    </div>
-                
-                    <div class="goods">
-                        <div class="goods__cut"> <img src="img/goods/Amiricano.png" alt="item" class="goods__img" /></div>
-                        <div class="goods__context">
-                            <h3 class="goods__h3">Lorem, ipsum.</h3>
-                            <p class="goods__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis culpa repudiandae quisquam laborum totam enim labore itaque, architecto rem ipsam fugiat hic praesentium quam tempora.</p>
-                            <p class="goods__price">200руб</p>
-                        </div>                        
-                    </div>
-                </div> 
-                <details class="coffe__det">
-                    <summary class="coffe__summary">Показать ещё</summary>
-                    <div class="coffe__box">
-                        <div class="goods">
-                            <div class="goods__cut"> <img src="img/goods/Amiricano.png" alt="item" class="goods__img" /></div>
-                            <div class="goods__context">
-                                <h3 class="goods__h3">Lorem, ipsum.</h3>
-                                <p class="goods__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis culpa repudiandae quisquam laborum totam enim labore itaque, architecto rem ipsam fugiat hic praesentium quam tempora.</p>
-                                <p class="goods__price">200руб</p>
-                            </div>                        
-                        </div>
-                
-                        <div class="goods">
-                            <div class="goods__cut"> <img src="img/goods/Amiricano.png" alt="item" class="goods__img" /></div>
-                            <div class="goods__context">
-                                <h3 class="goods__h3">Lorem, ipsum.</h3>
-                                <p class="goods__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis culpa repudiandae quisquam laborum totam enim labore itaque, architecto rem ipsam fugiat hic praesentium quam tempora.</p>
-                                <p class="goods__price">200руб</p>
-                            </div>                        
-                        </div>                        
-                    </div>
-                </details>                                             
-                <!--step2-->
-                <div class="lenta__title">                    
-                    <h2 class="lenta__h2">Десерты</h2>                    
-                </div>
-                <div class="lenta">
-                    <div class="goods">
-                        <div class="goods__cut"> <img src="img/goods/Amiricano.png" alt="item" class="goods__img" /></div>
-                        <div class="goods__context">
-                            <h3 class="goods__h3">Lorem, ipsum.</h3>
-                            <p class="goods__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis culpa repudiandae quisquam laborum totam enim labore itaque, architecto rem ipsam fugiat hic praesentium quam tempora.</p>
-                            <p class="goods__price">200руб</p>
-                        </div>                        
-                    </div>
-                
-                    <div class="goods">
-                        <div class="goods__cut"> <img src="img/goods/Amiricano.png" alt="item" class="goods__img" /></div>
-                        <div class="goods__context">
-                            <h3 class="goods__h3">Lorem, ipsum.</h3>
-                            <p class="goods__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis culpa repudiandae quisquam laborum totam enim labore itaque, architecto rem ipsam fugiat hic praesentium quam tempora.</p>
-                            <p class="goods__price">200руб</p>
-                        </div>                        
-                    </div>
-                
-                    <div class="goods">
-                        <div class="goods__cut"> <img src="img/goods/Amiricano.png" alt="item" class="goods__img" /></div>
-                        <div class="goods__context">
-                            <h3 class="goods__h3">Lorem, ipsum.</h3>
-                            <p class="goods__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis culpa repudiandae quisquam laborum totam enim labore itaque, architecto rem ipsam fugiat hic praesentium quam tempora.</p>
-                            <p class="goods__price">200руб</p>
-                        </div>                        
-                    </div>
-                
-                    <div class="goods">
-                        <div class="goods__cut"> <img src="img/goods/Amiricano.png" alt="item" class="goods__img" /></div>
-                        <div class="goods__context">
-                            <h3 class="goods__h3">Lorem, ipsum.</h3>
-                            <p class="goods__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis culpa repudiandae quisquam laborum totam enim labore itaque, architecto rem ipsam fugiat hic praesentium quam tempora.</p>
-                            <p class="goods__price">200руб</p>
-                        </div>                        
-                    </div>
-                </div>                 
-                <div class="lenta"></div>
-                <!--step3-->
-                <div class="lenta__title">
-                    <h2 class="lenta__h2">Блины</h2>
-                    
-                </div>
-                <div class="lenta">
-                    <div class="goods">
-                        <div class="goods__cut"> <img src="img/goods/Amiricano.png" alt="item" class="goods__img" /></div>
-                        <div class="goods__context">
-                            <h3 class="goods__h3">Lorem, ipsum.</h3>
-                            <p class="goods__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis culpa repudiandae quisquam laborum totam enim labore itaque, architecto rem ipsam fugiat hic praesentium quam tempora.</p>
-                            <p class="goods__price">200руб</p>
-                        </div>                        
-                    </div>
-                
-                    <div class="goods">
-                        <div class="goods__cut"> <img src="img/goods/Amiricano.png" alt="item" class="goods__img" /></div>
-                        <div class="goods__context">
-                            <h3 class="goods__h3">Lorem, ipsum.</h3>
-                            <p class="goods__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis culpa repudiandae quisquam laborum totam enim labore itaque, architecto rem ipsam fugiat hic praesentium quam tempora.</p>
-                            <p class="goods__price">200руб</p>
-                        </div>                        
-                    </div>
-                
-                    <div class="goods">
-                        <div class="goods__cut"> <img src="img/goods/Amiricano.png" alt="item" class="goods__img" /></div>
-                        <div class="goods__context">
-                            <h3 class="goods__h3">Lorem, ipsum.</h3>
-                            <p class="goods__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis culpa repudiandae quisquam laborum totam enim labore itaque, architecto rem ipsam fugiat hic praesentium quam tempora.</p>
-                            <p class="goods__price">200руб</p>
-                        </div>                        
-                    </div>
-                
-                    <div class="goods">
-                        <div class="goods__cut"> <img src="img/goods/Amiricano.png" alt="item" class="goods__img" /></div>
-                        <div class="goods__context">
-                            <h3 class="goods__h3">Lorem, ipsum.</h3>
-                            <p class="goods__p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis culpa repudiandae quisquam laborum totam enim labore itaque, architecto rem ipsam fugiat hic praesentium quam tempora.</p>
-                            <p class="goods__price">200руб</p>
-                        </div>                        
-                    </div>
-                </div>                 
-                <div class="lenta"></div>
+                </form>
             </div>
-
         </main>
     <!--end-->
         <footer class="footer">

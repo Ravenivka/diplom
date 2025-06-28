@@ -1,71 +1,71 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use App\Models\User;
-use App\Http\Classes\User as Person;
-
+use Illuminate\Http\Request;    
 
 class HomeController extends Controller
 {   
-    private $person = null;
-    private $parent = '/';
-
-
-
-    public function getPerson() {
-        return $this->person;
-    }
-    public function getParent() {
-        return $this->parent;
-    }
-
-    public function setPerson($value) {
-        $this->person = $value;
-    }
-    public function setParent($value) {
-        $this->parent = $value;
-    }    
-
-    public function index(){
-        if ($this->person == null) {
-            $this->setPerson(new Person());
-        }
-        $this->parent = '/';
-        return view('home', ['person' => $this->person->getname(), 'parent' => $this->parent]);
+    
+    public function index(Request $request){      
+        
+        return view('home', ['parent'=> $request->path()]);
         //return $this->parent;
     }
 
-    public function team() {
-        $this->parent = '/team';
+    public function team(Request $request) {
+        
         //return $this->parent;
-        return view('team', ['person' => $this->person, 'parent' => $this->parent]);
+        return view('team', ['parent'=> $request->path()]);
     }
-    public function coffe() {
-        $this->parent = '/coffe';
+    public function coffe(Request $request) {
+        
         //return $this->parent;
-        return view('coffe', ['person' => $this->person, 'parent' => $this->parent]);
+        return view('coffe', ['parent'=> $request->path()]);
     }
-        public function feed() {
-        $this->parent = '/feed';
+        public function feed(Request $request) {
+        
         //return $this->parent;
-        return view('feed', ['person' => $this->person, 'parent' => $this->parent]);
+        return view('feed', ['parent'=> $request->path()] );
     }
-    public function order() {
-        $this->parent = '/order';
+    public function order(Request $request) {
+       
         //return $this->parent;
-        return view('order', ['person' => $this->person, 'parent' => $this->parent]);
+        return view('order', ['parent'=> $request->path()]);
     }
   
 
-    public function aut () {
-      $person = $this->getPerson();
+    public function aut ($parent) {
       
+      return view('aut',[ 'parent' => $parent]);
     }
 
     public function getorder(Request $request, $data) {
         
-        return view('order', ['person' => $this->person, 'parent' => $this->parent, 'data' => $data]);
+        return view('order', [ 'data' => $data, 'parent'=> $request->path()]);
+    }
+    public function reg ($parent) {
+      
+      return view('reg', [ 'parent' => $parent]);
+    }
+
+    public function record (Request $request) {
+        if (!isset($_POST['uName'])) {
+            $uName ='User'.Time();
+        } else {
+            $uName = $_POST['uName'];
+        }
+        if (!isset($_POST['uAdress'])) {
+            $uAdress = '';
+        } else {
+            $uAdress = $_POST['uAdress'];
+        }
+        $user = new User;
+        $user->name = $uName;
+        $user->email = $_POST['uMail'];
+        $user->password = $_POST['uPass'];
+        $user->adress = $uAdress;
+        $user->save();
+        return $user;
     }
 }

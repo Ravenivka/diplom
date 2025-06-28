@@ -1,37 +1,14 @@
 
-<style>
-    .row_person {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 20px;
-        color: coral;
-        font-weight: bold;
-    }
-    .row__summary{
-        display: block;
-        margin-left: 10px;
-    }
-    .row__panel {
-        display: flex;
-        align-items: center;
-    }
-    .row__div {
-        position: absolute;
-        top: 50px;
-        right: 220px;
-        background-color: #505050;
-        visibility: hidden;
-    }
-    .row__a {
-        color: gold;
-        border: none;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 16px;
-        width: 150px;
-        text-align: left;
-        padding-left: 5px;
-    }
-</style>
 
+<?php
+    use App\Http\Classes\User ;
+    
+    if (!isset($_SESSION['user'])) {
+        $_SESSION['user'] = new User();
+    } 
+    $person = $_SESSION['user'];
+    
+?>
 
     <div class="row__start"> <h1 class="row__h1" id="home">КОФЕЙНЯ</h1></div>
     <div class="row__finish">
@@ -41,15 +18,15 @@
         <span class="row__span" id="order">Заказ</span>
     </div>
     <div class="row__panel">        
-    <span class="row_person">{{ $person }}</span>        
-    
-        <button class="row__summary" > <img width="30" height="30" alt="user" src="img/user.png" /> </button>
+    <span class="row_person">{{ $person->getname() }}</span>        
+    <details>
+        <summary class="row__summary" > <img width="30" height="30" alt="user" src="{{ url('img/user.png') }}" /> </summary>
         <div class="row__div" id="row__div">
-            <a class="row__a" href="/aut">Войти</a><hr/>
-            <a class="row__a" href="/reg">Регистрация</a><hr/>
-            <a class="row__a" href="/panel">Панель управления</a>
+            <a class="row__a" id="row__a1" href="/aut/{{ $parent }}">Войти</a><hr/>
+            <a class="row__a" id="row__a2" href="/reg/{{ $parent }}">Регистрация</a><hr/>
+            <a class="row__a" id="row__a3" >Панель управления</a>
         </div>
-        
+    </details>
 
     </div>
     <script>
@@ -73,13 +50,6 @@
         feed.addEventListener('click', function(){
             window.location.href = '/feed';
         } );
-        const visa = document.querySelector('.row__summary');
-        const diva = document.getElementById('row__div');
-        visa.addEventListener('click', function(){
-            if (diva.style.visibility == 'visible') {
-                diva.style.visibility = 'hidden';
-            } else {
-                diva.style.visibility = 'visible';
-            }
-        })
+
+
     </script>

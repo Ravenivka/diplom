@@ -1,30 +1,4 @@
-<style>
-    .goods {
-      width: 400px;
-    }
-    .goods__img {
-      width: 100%;
-    }
-    .goods__cut {
-      width: 400px;
-      height: 467px;
-      overflow: hidden;     
-    }
-    .goods__h3 {
-      text-align: center;
-    }
-    .goods__p {
-      margin: 4px 4px;
-    }
-    .goods__price {
-      margin: 14px 4px;
-      font-size: 16px;
-      color: darkmagenta;
-    }
-    .goods__context{
-      font-family: Arial, Helvetica, sans-serif;
-    }
-</style>
+
 
 
 <div class="goods">

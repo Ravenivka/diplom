@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            
+            $table->id();
             $table->string('name');
-            $table->string('email')->primary();
+            $table->string('email');
             $table->integer('role')->default('1');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
@@ -23,6 +23,7 @@ return new class extends Migration
             $table->boolean('onDesc')->default(false);
             $table->string('adress')->default('');
             $table->string('phone')->default('');
+            $table->text('avatar')->default('img/user.png');
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
