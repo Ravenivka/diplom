@@ -50,22 +50,32 @@ class HomeController extends Controller
     }
 
     public function record (Request $request) {
-        if (!isset($_POST['uName'])) {
-            $uName ='User'.Time();
-        } else {
-            $uName = $_POST['uName'];
-        }
-        if (!isset($_POST['uAdress'])) {
-            $uAdress = '';
-        } else {
-            $uAdress = $_POST['uAdress'];
-        }
-        $user = new User;
-        $user->name = $uName;
-        $user->email = $_POST['uMail'];
-        $user->password = $_POST['uPass'];
-        $user->adress = $uAdress;
+
+        $validated = $request->validate([
+            'name' => ['nullable', 'min:4'],
+            'email' => ['email:rfc', 'unique:users,email','required'],
+            'password' => ['required', 'regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/', 'min:6'],
+            'adress' => ['max:255'],
+            'phone' => ['min:5', 'required'],
+
+        ]);
+        $user = User::create($validated);
+        
         $user->save();
         return $user;
+    }
+
+
+    public function check(Request $request) {
+        $strUser = $request->input('logemail');
+        $strPass = $request->input('password');        
+        $user = User::where('email', $strUser)->first();
+        if ($user == null) {
+            return 'none';
+        } else {
+            return ($user->password);
+        }
+        
+        
     }
 }

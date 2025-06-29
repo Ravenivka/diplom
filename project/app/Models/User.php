@@ -14,8 +14,20 @@ class User extends Authenticatable
         'password',
         'role',
         'onDesc',
-        'adress'
+        'adress',
+        'phone'
+    ];
+        protected $hidden = [
+        'password',
+        'remember_token',
     ];
 
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
+    }
    
 }

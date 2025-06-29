@@ -22,7 +22,7 @@ class User {
       $this->onDesc = $userOnDesc;
       $this->adress = $userAddres;
       $this->phone = $userPhone;
-
+        
     }
 
     public function getname()

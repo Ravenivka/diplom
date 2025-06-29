@@ -2,11 +2,14 @@
 
 <?php
     use App\Http\Classes\User ;
+    use Illuminate\Support\Facades\Auth;    
     
-    if (!isset($_SESSION['user'])) {
-        $_SESSION['user'] = new User();
-    } 
-    $person = $_SESSION['user'];
+    $user = Auth::user(); 
+    if ($user == null) {
+        $uName = 'Гость';
+    } else {
+        $uName = $user->name;
+    }
     
 ?>
 
@@ -18,7 +21,7 @@
         <span class="row__span" id="order">Заказ</span>
     </div>
     <div class="row__panel">        
-    <span class="row_person">{{ $person->getname() }}</span>        
+    <span class="row_person">{{ $uName }}</span>        
     <details>
         <summary class="row__summary" > <img width="30" height="30" alt="user" src="{{ url('img/user.png') }}" /> </summary>
         <div class="row__div" id="row__div">
