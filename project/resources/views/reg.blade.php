@@ -4,7 +4,7 @@
     @endphp
 @section('content')
 
-@include('auth.register')
+@include('auth.register', ['parent' => $parent])
 
 <!--
 <div class="aut_container">

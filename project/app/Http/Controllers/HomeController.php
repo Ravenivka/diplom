@@ -49,33 +49,8 @@ class HomeController extends Controller
       return view('reg', [ 'parent' => $parent]);
     }
 
-    public function record (Request $request) {
-
-        $validated = $request->validate([
-            'name' => ['nullable', 'min:4'],
-            'email' => ['email:rfc', 'unique:users,email','required'],
-            'password' => ['required', 'regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/', 'min:6'],
-            'adress' => ['max:255'],
-            'phone' => ['min:5', 'required'],
-
-        ]);
-        $user = User::create($validated);
-        
-        $user->save();
-        return $user;
-    }
 
 
-    public function check(Request $request) {
-        $strUser = $request->input('logemail');
-        $strPass = $request->input('password');        
-        $user = User::where('email', $strUser)->first();
-        if ($user == null) {
-            return 'none';
-        } else {
-            return ($user->password);
-        }
-        
-        
-    }
+
+
 }
