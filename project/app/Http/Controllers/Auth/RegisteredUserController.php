@@ -29,6 +29,7 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {   
+        
         $parent = '/'. $request->input('parent');
         $request->validate([
             'name' => ['nullable','string', 'max:255'],
@@ -42,7 +43,7 @@ class RegisteredUserController extends Controller
         } else {
             $uName = $request->name;
         }
-
+        Auth::logout();
         $user = User::create([
             'phone' => $request->phone,
             'name' => $uName,

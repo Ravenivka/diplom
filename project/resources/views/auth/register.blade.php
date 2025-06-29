@@ -7,6 +7,36 @@
         justify-content: center;
         align-items: center;
     }
+    .reg_label {
+        color: rgb(129 129 129);
+        font-size: 18px;
+    }
+    .reg_input {                
+        color: rgb(209 213 219);
+        font-size: 18px;
+        border: 2px solid darkgrey;
+        border-radius: .375rem;
+        background-color: rgb(17 24 39);
+    }
+    .reg-alredy {
+        display: flex; 
+        align-items: center;
+        justify-content: end;
+        color: red;
+        margin-top: 10px;
+    }
+    .reg_btn {
+        color: rgb(31 41 55);
+        background-color: lightgray;
+        border-radius: .375rem;
+        font-family: 'Consolas' ;
+        margin-left: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .reg-danger {
+        color: red;
+    }
 </style>
 
 
@@ -28,56 +58,55 @@
         <input type="hidden" value="{{ $parent }}" name="parent" />
         <!-- Name -->
         <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')"  />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
+            <label class='reg_label' for="name">Name</label><br/> 
+            <input id="name" class="reg_input" type="text" name="name" />              
         </div>
 
         <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        <div >
+            <label class='reg_label' for="email" >Email</label><br/>
+            <input id="email" class="reg_input" type="email" name="email" required autocomplete="username" />           
         </div>
 
         <!--phone -->
-        <div class="mt-4">
-            <x-input-label for="phone" :value="__('Phone')" />
-            <x-text-input id="phone" class="block mt-1 w-full" type="tel" name="phone" :value="old('phone')" required  />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+        <div >
+            <label class='reg_label' for="phone" >Phone</label><br/>
+            <input id="phone" class="reg_input" type="tel" name="phone" required  />            
         </div>
 
         <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+        <div >
+            <label class='reg_label' for="password" >Password</label><br/>
 
-            <x-text-input id="password" class="block mt-1 w-full"
+            <input id="password" class="reg_input"
                             type="password"
                             name="password"
-                            required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                            required autocomplete="new-password" />           
         </div>
 
         <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
+        <div >
+            <label class='reg_label' for="password_confirmation" >Confirm Password</label><br/>
+            <input id="password_confirmation" class="reg_input"
                             type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
-
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+                            name="password_confirmation" required autocomplete="new-password" />            
         </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
+        <div class="reg-alredy">
+            <a  href="{{ route('login') }}" style="color: white; font-family: Arial, Helvetica, sans-serif , sans-serif; font-size: 12px;">Already registered?</a>
 
-            <x-primary-button class="ms-4">
+            <button class="reg_btn" type="submit">
                 {{ __('Register') }}
-            </x-primary-button>
+            </button>
         </div>
+        @if($errors->any())
+            <div class="reg-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
     </form>
 </div>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MidController;
 
 Route::get('/laravel', function () {
     return view('welcome');
@@ -30,3 +31,6 @@ Route::get('/team', [HomeController::class, 'team']);
 Route::post('/order/{data}', [HomeController::class, 'getorder']);
 Route::post('/record', [HomeController::class, 'record']);
 Route::get('/reg/{parent}', [HomeController::class, 'reg']);
+
+
+Route::get('/exit/{parent}', [MidController::class, 'exit'] );
