@@ -9,3 +9,5 @@ php artisan migrate
 
 npm run build  
 
+transfer from windows to linux
+
