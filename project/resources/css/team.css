@@ -1,0 +1,133 @@
+.team {
+  position: relative;
+  width: 100%;
+}
+.team__h1 {
+  text-align: center;
+}
+
+.squad {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.item {
+  width: 400px;
+  border: 3px solid #A0A0A0 ;
+}
+.item__img {
+  width: 100%;
+}
+.item__cut {
+  width: 400px;
+  height: 480px;
+  overflow: hidden;
+}
+.item__h3 {
+  text-align: center;
+}
+.item__p {
+  margin: 4px 4px;
+}
+.inner_cart { /* from order */
+    display: flex;
+}
+.order_container_left{
+   position: relative;
+    width: 50%;
+    height: 80vh;            
+}
+.order_container_right{
+    width: 50%;
+}
+.order_container{
+    width: 100%;
+    position: relative;
+}
+.after_ol {
+    font-weight: bold;
+    margin: 20px 5px;
+    font-size: 26px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+}
+.right_ul {
+    font-size: 20px;
+    margin-left: 30px;
+}
+
+        .coffe_container {
+          width: 100%;
+        }
+        .coffe__h1 {
+          text-align: center;
+          margin: 5px auto;
+        }
+        .coffe__box {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          position: relative;
+        }
+
+        .lenta {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          position: relative;
+        }
+        .lenta__title {
+          width: 100%;
+          height: 150px;
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;          
+          background-position: center;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+        .lenta__h2 {
+          display: block;
+          position: relative;
+          text-align: center;
+        }   
+        .coffe__summary {
+          margin-left: 50px;
+          margin-top: 10px;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 18px;
+          color: violet;
+        }    
+        .coffee_button {
+          border: none;
+          padding:10px;
+          margin-bottom:10px;
+          border-radius: 15px;
+          color: violet;
+        } 
+        .coffee_button:hover {
+          background-color: violet;
+          color: gray;
+        }
+
+@media (max-width: 1599px) {
+  .item {
+    border: none;
+  }
+}
+@media (max-width: 424px) {
+  .item {
+    width: 375px;
+  }
+  .item__img {
+    width: 100%;
+  }
+  .item__cut {
+    width: 375px;
+    height: 450px;
+  }
+}
