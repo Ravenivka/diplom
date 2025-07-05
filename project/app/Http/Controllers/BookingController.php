@@ -8,11 +8,16 @@ use Illuminate\Http\Request;
 class BookingController extends Controller
 {
     public function create(Request $request) {
-        $book =  new Booking;
+        
         
         $goods_array = [];
         foreach(Order::all() as $order) {
           $goods_array[$order->id] = $order->count;  
+        }
+        if (count($goods_array)>0 ){
+            $book =  new Booking;
+        } else {
+            return redirect('/order');
         }
         $goods_string = json_encode($goods_array);
         $book->user_id=$_POST['user_id'];

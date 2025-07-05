@@ -53,9 +53,9 @@
                 <li>
                     <h3>Способ оплаты</h3>
                     <div class="inner__li">
-                        <p><input type="radio" name="method" value="hand" class="inner__radio"> При получении </p>
-                        <p><input type="radio" name="method" value="SBP" class="inner__radio"> СБП </p>
-                        <p><input type="radio" name="method" value="card" class="inner__radio"> Банковской картй </p>
+                        <p><input type="radio" name="method" value="При получении" class="inner__radio"> При получении </p>
+                        <p><input type="radio" name="method" value="СБП" class="inner__radio"> СБП </p>
+                        <p><input type="radio" name="method" value="Банковской картoй" class="inner__radio"> Банковской картoй </p>
                     </div>
                 </li>
                 <li>
@@ -86,8 +86,8 @@
                 </li>
                 <li>
                     <h3>Способ доставки</h3>
-                    <p><input name="drive" type="radio" value="table" class="inner__radio"> Заказать столик </p>
-                    <p><input name="drive" type="radio" value="self" class="inner__radio"> Самовывоз </p>
+                    <p><input name="drive" type="radio" value="Заказать столик" class="inner__radio"> Заказать столик </p>
+                    <p><input name="drive" type="radio" value="Самовывоз" class="inner__radio"> Самовывоз </p>
                     <p><input name="drive" type="radio" value="address" class="inner__radio"> Курьером</p>
                     <textarea name="address" style="height: 25%; width: 80%; padding: 3px;"><?php
                         if ($user != null) {

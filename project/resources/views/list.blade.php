@@ -1,30 +1,33 @@
 @extends('layouts.layout')
 <?php 
-    use App\Models\Good;
+    use App\Models\Booking;
     $title='Заказ'; 
     $parent='create'; 
-    $string = $record->composition;
-    $array = json_decode($string);
+    
 ?>
-
+<style>
+    .list_text {
+        margin-left: 25px;
+        font-size: 14px;
+    }
+</style>
 
 
 @section('content')
 <div class="order_container">
-    <h1 style="text-align: center;">Ваш заказ №{{ $record->id }}</h1>    
-    <div>
-        <?php
-            $str='';
-            foreach ($array as $key => $value) {
-                $item = Good::find($key);
-                $str = $str.$item->name.' - '.$value.'; ';
+    <h1 style="text-align: center;">Ваш заказ №{{ $record->id }} создан</h1>    
+    @include('components.line', ['book' => $record])
+    <div class="multiline">
+        <h1 style="text-align: center;">Ваши заказы </h1>    
+        <?php 
+            $books = Booking::where('email', $record->email)->get();
+            foreach ($books as $value) {
+                if ($value->id != $record->id) { ?>
+                    @include('components.line', ['book' => $value])
+                    <?php
+                }
             }
-            //echo $str;
         ?>
-        <p style="margin-left: 25px;">{{ $str }} ИТОГО: {{ $record->amount }} руб.</p>
-        
-            
     </div>
-
 </div>
 @endsection
