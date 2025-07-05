@@ -5,12 +5,7 @@
     $parent='create'; 
     
 ?>
-<style>
-    .list_text {
-        margin-left: 25px;
-        font-size: 14px;
-    }
-</style>
+
 
 
 @section('content')

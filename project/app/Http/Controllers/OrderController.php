@@ -55,9 +55,18 @@ class OrderController extends Controller
                 }                
             }
         } 
-        
-             
-        return view('order', [ 'parent'=> $request->path()]);
+        $cart=[];
+        $i = 0;
+        foreach(Order::all() as $item)  {
+            $cart[$i] = ['cat' => $item->cat, 'id' =>$item->id, 'count' => $item->count];
+            $i++;
+        } 
+                
+        if (count($cart)==0) {
+            return view('message', ['parent'=> $request->path(), 'title'=>'Внимание', 'message'=>'Ваша корзина пуста']); 
+        } 
+        return $cart;    
+        //return view('order', [ 'parent'=> $request->path(), 'cart'=> $cart]);
     }
 
 

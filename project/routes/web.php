@@ -44,3 +44,5 @@ Route::get('/form', [OrderController::class, 'form'] );
 
  
 Route::post('/create', [BookingController::class, 'create']);
+Route::get('/myorder', [BookingController::class, 'order']);
+Route::get('/posts', [BookingController::class, 'posts']);

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\Booking;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
 {
@@ -38,9 +39,35 @@ class BookingController extends Controller
         $book->email = $_POST['email'];
         $book->amount = $_POST['amount'];
         $book->save();
-        
+        $request->session()->put('email', $_POST['email']);
         $record = Booking::where('composition', $goods_string) ->where('time_creation', $time)->first();
         Order::truncate();
         return view('list', ['record'=>$record]);
     }
+    public function order(Request $request) {
+        if (Auth::check()){
+            $email = Auth::user()->email;
+        } else {
+            if ($request->session()->has('email')) {
+                $email = $request->session()->get('email');
+            } else {
+                $email = null;
+            }            
+        }
+        if ($email == null) {
+            return 'no result';
+        }
+
+        
+        $books = Booking::where('email', $email)->get();
+        return view('myorder',['books'=> $books]);
+    }
+
+    public function posts() {
+        $message = "Тут дожно быть API банка";
+        $title = "Внимание";
+        return view('message', ['message'=>$message, 'title'=>$title, 'parent'=>'myoder']);
+    }
 }
+
+

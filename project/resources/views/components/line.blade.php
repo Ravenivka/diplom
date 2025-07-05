@@ -9,10 +9,10 @@
     }
     
     if ((int)$book->paid != 1 || $book->status != 'Закрыт' || $book->status != 'Отменён') {
-        
+        $myURL = '/posts';
         $str3 = '<h3 style="text-align: center">Оплата '.$book->pay_method.'</h3>
                 <p style="text-align: center">
-                <button class="pay_btn" onclick="alert("Тут должна быть система оплаты")">Оплатить</button> </p>';
+                <a class="pay_btn" href="'.$myURL.'">Оплатить</button> </a>';
     } elseif ((int)$book->paid == 1) {
         $str3 = '<h3 style="text-align: center">Оплачено</h3>';
     } elseif ($book->status == 'Отменён') {
@@ -30,12 +30,12 @@
         width: 96%;
         margin-left: 2%;
         margin-right: 2%;
-        display: grid;
-        grid-template-rows: 200px;
-        grid-template-columns: 30px auto 200px 300px 100px;
+        display: grid;        
+        grid-template-columns: 30px auto 200px 300px 200px 100px;
         border: 2px solid navy;
     }
     .line__first {
+        padding: 10px 0 ;
         width: 30px;
         height: 100%;
         display: flex;
@@ -45,6 +45,7 @@
         background-color: lightyellow;
     }
     .line__second {
+        padding: 10px 0 ;
         display: flex;        
         align-items: center;
         font-size: 20px;
@@ -57,12 +58,14 @@
         font-size: 18px;
     }
     .line__thrid {
+        padding: 10px 0 ;
         display: flex;        
         flex-direction: column;
         justify-content: center;
         background-color: lightyellow;
     }
     .line__forth {
+        padding: 10px 0 ;
         width: 100%;
         height: 100%;
         display: flex;
@@ -71,13 +74,22 @@
         font-size: 20px;        
     }
     .line__fifth{
+        padding: 10px 0 ;
         display: flex;        
-        align-items: center;
-        background-color: lightyellow;
+        justify-content: center;
+        flex-direction: column;
+        background-color: lightyellow;         
+        font-size: 20px;      
+    }
+        .line__sixth{
+            padding: 10px 0 ;
+        display: flex;        
+        align-items: center;        
         justify-content: center;  
         font-size: 20px;      
     }
 </style>
+
 
 <div class="line_main">
     <div class="line__first">
@@ -94,7 +106,13 @@
         {{ $book->address }}
     </div>
     <div class="line__fifth">
-        {{ $book->status}}
+        <p class="list_text">Контакты:</p>
+        <p class="list_text">{{ $book->email }}</p>
+        <p class="list_text">{{ $book->phone }}</p>
+
+    </div>
+    <div class="line__sixth">
+        <p class="list_text">{{ $book->status}}</p>
     </div>
 </div>
 

@@ -113,7 +113,13 @@
           background-color: violet;
           color: gray;
         }
-
+    .list_text {
+        margin-left: 25px;
+        font-size: 14px;
+    }
+    .multiline{
+        height: 80vh;
+    }
 @media (max-width: 1599px) {
   .item {
     border: none;

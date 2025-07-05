@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;    
+use Illuminate\Http\Request;  
+use App\Models\Order;  
 
 class HomeController extends Controller
 {   
@@ -48,8 +49,16 @@ class HomeController extends Controller
     }
 
     public function order(Request $request) {
-        
-        return view('order', [ 'parent'=> $request->path()]);
+        $cart=[];
+        $i = 0;
+        foreach(Order::all() as $item)  {
+            $cart[$i] = ['cat' => $item->cat, 'id' =>$item->id, 'count' => $item->count];
+            $i++;
+        } 
+        if (count($cart)==0) {
+            return view('message', ['parent'=> $request->path(), 'title'=>'Внимание', 'message'=>'Ваша корзина пуста']); 
+        } 
+        return view('order', [ 'parent'=> $request->path(),'cart'=>$cart]);
     }
     public function reg ($parent) {
       

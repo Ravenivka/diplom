@@ -29,5 +29,11 @@
             </div>
         </div>
     </div>
-       
+    <script>
+        const btn = document.querySelector('.home__basic_order');
+        btn.addEventListener('click', function(){
+            window.location.href = '/coffe';
+        });
+
+    </script>
 @endsection

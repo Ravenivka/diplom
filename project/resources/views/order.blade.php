@@ -3,12 +3,7 @@
         use App\Models\Order;
         use App\Models\Good;
         $title = 'Заказ'; 
-        $cart=[];
-        $i = 0;
-        foreach(Order::all() as $item)  {
-            $cart[$i] = ['cat' => $item->cat, 'id' =>$item->id, 'count' => $item->count];
-            $i++;
-        }             
+        var_dump($cart);   
     @endphp
 @section('content')
 <!-- move to team.css
@@ -17,11 +12,7 @@
     </style>
  -->
     <div class="order_container">
-        <?php
-            if (count($cart)==0) {
-                echo '<h1 style="text-align: center;">Ваша корзина пуста</h1>'; 
-            } else {
-                echo '<h1 style="text-align: center; margin: 10px;">Ваша корзина </h1>'; ?>
+        <h1 style="text-align: center; margin: 10px;">Ваша корзина </h1>
                 <div class="inner_cart">
                     <div class="order_container_left"> @include('components.order_list', ['goods'=>$cart]) </div>
                     <div class="order_container_right">
@@ -47,7 +38,7 @@
                 <div class="formed_span">                    
                     <a class="formed_a" href="/form">Оформить</a>                   
                 </div>
-        <?php } ?>
+       
     </div>
        
 @endsection
