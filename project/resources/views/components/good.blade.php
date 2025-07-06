@@ -1,28 +1,4 @@
-<style>
-.goods__context_cart{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.goods__context_img{
-    width: 40px;  
-    display: flex;
-    position: relative;
-}
-.goods__price {
-    width: 40%;
-}
-.goods__context_svg {
-    fill: #8b008b;
-}
-.goods__context_img:hover {
-    .goods__context_svg {fill: lightgreen;}    
-}
-.goods_check {
-    margin-left: 5px;
-    
-}
-</style>
+
 
 
 <div class="goods">

@@ -1,0 +1,41 @@
+<style>
+    .feed {
+        width: 50%;
+        position: relative;
+        display: flex;
+        border: 10px groove pink;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    }
+    .feed__img{
+        width: 15%;
+    }
+    .feed__pic {
+        max-width: 100%;
+        max-height: 100%;
+        border: 1px solid black;
+        border-radius: 50%;
+    }
+    .feed__txt {
+        margin-left: 2%;
+        width: 80%;
+        position: relative;
+        height: 100%;
+        flex-grow: 1
+    }
+    .feed_autor {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-weight: bold;
+    }
+</style>
+
+<div class="feed">
+    <div class="feed__img">
+        <img src="i.webp" alt="pic" class="feed__pic">
+    </div>
+    <div class="feed__txt">
+        <p class="feed__content"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio blanditiis ducimus inventore totam voluptatibus aut perspiciatis dignissimos? Repellat qui quod fuga, magni quaerat, quae voluptatem modi praesentium dolore mollitia ipsum! </p>
+        <div class="feed_autor">Петя</div>
+    </div>
+</div>

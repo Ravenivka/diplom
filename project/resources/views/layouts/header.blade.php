@@ -29,9 +29,13 @@
         <div class="row__div" id="row__div">
             <a class="row__a" id="row__a1" href="/aut/{{ $parent }}">Войти</a><hr/>
             <a class="row__a" id="row__a2" href="/reg/{{ $parent }}">Регистрация</a><hr/>
+            <a class="row__a" id="row__a2" href="/info/user">Профиль</a><hr/>
             <a class="row__a" id="row__a2" href="/myorder">Мои заказы</a><hr/>
             <a class="row__a" href="/exit/{{ $parent }}">Выход</a><hr/>
-            <a class="row__a" id="row__a3" >Панель управления</a>
+            @if ($user != null && $user->role > 0)
+                <a class="row__a" id="row__a3" href="/panel">Панель управления</a>
+            @endif
+            
         </div>
     </details>
 

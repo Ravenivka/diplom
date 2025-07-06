@@ -15,7 +15,8 @@ class User extends Authenticatable
         'role',
         'onDesc',
         'address',
-        'phone'
+        'phone',
+        'avatar'
     ];
     protected $hidden = [
         'password',

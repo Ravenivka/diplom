@@ -5,6 +5,7 @@ use App\Models\Order;
 use App\Models\Booking;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class BookingController extends Controller
 {
