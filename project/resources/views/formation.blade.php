@@ -8,21 +8,7 @@
     $title="Оформление";
     $parent = 'form';
 @endphp
-<style>
-    .formation{
-        height: 80vh;
-        width: 80%;
-        margin: 0 auto;
-        position: relative;
-        display: flex;
-    }
-    .formation__left {
-        width: 49%;
-    }
-    .formation__right {
-        width: 49%;
-    }
-</style>
+
 @section('content')
 <h1 style="text-align:center;">Оформление заказа</h1>
 <div class="formation">
@@ -63,7 +49,7 @@
                     <div class="inner__li">
                         <?php
                             $user = Auth::user();  
-                            echo '<p>Ваш e-mail: <input name="email" type="text" class="inner__text" value="' ;
+                            echo '<p>Ваш e-mail: <input required name="email" type="text" class="inner__text" value="' ;
                             if  ($user == null) {
                                 echo ''; 
                             }  else {

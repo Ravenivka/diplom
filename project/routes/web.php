@@ -30,7 +30,6 @@ Route::get('/coffe', [HomeController::class, 'coffe']);
 Route::get('/feed', [HomeController::class, 'feed']);
 Route::get('/order', [HomeController::class, 'order']);
 Route::get('/team', [HomeController::class, 'team']);
-Route::post('/order', [HomeController::class, 'order']);
 Route::post('/record', [HomeController::class, 'record']);
 Route::get('/reg/{parent}', [HomeController::class, 'reg']);
 Route::get('/aut/{parent}', [HomeController::class, 'aut']);

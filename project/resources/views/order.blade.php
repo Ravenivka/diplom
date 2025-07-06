@@ -3,12 +3,12 @@
         use App\Models\Order;
         use App\Models\Good;
         $title = 'Заказ'; 
-        var_dump($cart);   
+        //var_dump($cart);   
     @endphp
 @section('content')
 <!-- move to team.css
     <style> 
-        
+
     </style>
  -->
     <div class="order_container">

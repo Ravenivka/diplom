@@ -65,8 +65,8 @@ class OrderController extends Controller
         if (count($cart)==0) {
             return view('message', ['parent'=> $request->path(), 'title'=>'Внимание', 'message'=>'Ваша корзина пуста']); 
         } 
-        return $cart;    
-        //return view('order', [ 'parent'=> $request->path(), 'cart'=> $cart]);
+        //return $cart;    
+        return view('order', [ 'parent'=> $request->path(), 'cart'=> $cart]);
     }
 
 
