@@ -71,7 +71,7 @@
             <div class="inner__frame">
                 <img src="{{ url($user->avatar) }}" alt="img_profile" class="img_profile">
             </div>
-            <form action="/getImg" method="POST" enctype="multipart/form-data" class="inner__form">
+            <form action="/getImg/user" method="POST" enctype="multipart/form-data" class="inner__form">
                 @csrf
                 <br>
                 <label for="input__upload"><img class="upload_img" src="{{ url('img/icons64.png') }}" width="64" height="64" alt="uplod"/></label>
